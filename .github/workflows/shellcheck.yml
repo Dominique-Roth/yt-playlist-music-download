@@ -16,9 +16,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up shellcheck
-      uses: ludeeus/action-shellcheck@master
-
     - name: Run shellcheck
-      run: shellcheck -e SC1091 downloadMusic.sh
+      uses: ludeeus/action-shellcheck@master
+      env:
+        SHELLCHECK_OPTS: -e SC1091
 
